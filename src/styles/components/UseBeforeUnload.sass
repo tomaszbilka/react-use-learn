@@ -1,0 +1,43 @@
+.useBeforeUnload
+  @include main
+
+  &__wrapp
+    display: flex
+    align-items: center
+
+  &__switch
+    margin: 0 5px
+    width: 60px
+    height: 34px
+    position: relative
+
+  &__slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #ccc
+    transition: .4s
+    border-radius: 34px
+
+    &::before
+      position: absolute
+      content: ""
+      height: 26px
+      width: 26px
+      left: 4px
+      bottom: 4px
+      background-color: white
+      transition: .4s
+      border-radius: 50%
+
+  &__input
+    margin-left: 20px
+
+  &__input:checked + &__slider
+    background-color: #2196F3
+
+  &__input:checked + &__slider::before
+    transform: translateX(26px)
